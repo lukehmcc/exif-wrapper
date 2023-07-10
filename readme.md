@@ -1,4 +1,4 @@
-# ugly wrapper around mattwilson1024/google-photos-exif
+# ugly wrapper around garzj/google-photos-migrate
 
 ## How do I run it?
 
@@ -12,4 +12,5 @@ docker-compose up
 
 ## Why
 
-Because I found making manual steps daunting, and I already hacked this script together. Might as well share it
+MrYakobo: Because I found making manual steps daunting, and I already hacked this script together. Might as well share it
+Covalent: Because there is a newer version of google-photos-exif that does more stuff

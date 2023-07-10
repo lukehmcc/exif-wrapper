@@ -17,7 +17,7 @@ def p(s):
     print(s, file=sys.stderr)
 
 
-def run_mattwilson1024_google_photos_exif(albumdir, outdir, errdir, check_errdir=True):
+def run_garzj_google_photos_migrate(albumdir, outdir, errdir, check_errdir=True):
     os.makedirs(albumdir, exist_ok=True)
     os.makedirs(outdir, exist_ok=True)
     os.makedirs(errdir, exist_ok=True)
@@ -43,7 +43,7 @@ def run_mattwilson1024_google_photos_exif(albumdir, outdir, errdir, check_errdir
             ]
         )
         # rerun analysis
-        run_mattwilson1024_google_photos_exif(
+        run_garzj_google_photos_migrate(
             albumdir, outdir, errdir, check_errdir=False
         )
 
@@ -58,7 +58,7 @@ def process_albums(rootdir):
         album_name = Path(albumdir).stem
         outdir = f"{rootdir}/AlbumsProcessed/{album_name}"
         errdir = f"{rootdir}/AlbumsError/{album_name}"
-        run_mattwilson1024_google_photos_exif(albumdir, outdir, errdir)
+        run_garzj_google_photos_migrate(albumdir, outdir, errdir)
 
 def process_photos(rootdir):
     # also run the exif fix for the Photos
@@ -67,7 +67,7 @@ def process_photos(rootdir):
     outdir = f"{rootdir}/PhotosProcessed"
     errdir = f"{rootdir}/PhotosError"
 
-    run_mattwilson1024_google_photos_exif(albumdir, outdir, errdir)
+    run_garzj_google_photos_migrate(albumdir, outdir, errdir)
     
 def _restructure_if_needed(folders, target_dir):
     if os.path.exists(target_dir) and len(glob(f"{target_dir}/*")) > 0:
