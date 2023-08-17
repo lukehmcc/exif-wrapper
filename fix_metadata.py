@@ -24,16 +24,10 @@ def run_garzj_google_photos_migrate(albumdir, outdir, errdir, check_errdir=True)
 
     sh(
         [
-            "yarn", "install"
-        ]
-    )
-
-    sh(
-        [
             "yarn", "start",
-            "--inputDir", albumdir,
-            "--outputDir", outdir,
-            "--errorDir", errdir,
+            albumdir,
+            outdir,
+            errdir,
         ]
     )
 
